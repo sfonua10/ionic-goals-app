@@ -9,7 +9,7 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { images, accessibilityOutline, square, triangle } from 'ionicons/icons';
+import { images, accessibilityOutline, square, stop } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -53,16 +53,16 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={accessibilityOutline} />
-            <IonLabel>Daily Goals</IonLabel>
+            <IonIcon icon={stop} />
+            <IonLabel>Stop</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon icon={images} />
-            <IonLabel>Photos</IonLabel>
+            <IonLabel>Drop</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
             <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+            <IonLabel>Breathe</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

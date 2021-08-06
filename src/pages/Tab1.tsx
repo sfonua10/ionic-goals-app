@@ -1,8 +1,8 @@
-import { IonContent, IonHeader, IonLabel, IonList, IonItem, IonListHeader, IonPage, IonRadio, IonRadioGroup, IonTitle, IonToolbar, IonText } from '@ionic/react';
+import { IonContent, IonHeader, IonLabel, IonList, IonItem, IonInput, IonToggle, IonPage, IonRadio, IonCheckbox, IonTitle, IonToolbar, IonItemSliding, IonItemOptions, IonItemOption } from '@ionic/react';
 // import ExploreContainer from '../components/ExploreContainer';
 import './Tab1.css';
 
-const Tab1: React.FC = () => {
+const Stop: React.FC = () => {
   const daysOfWeek = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
   const monthsOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const today = new Date();
@@ -13,47 +13,32 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Daily Goals</IonTitle>
+          <IonTitle>Process Urges</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Daily Goals</IonTitle>
+            <IonTitle size="large">STOP</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonList>
-          <IonRadioGroup>
-            <IonListHeader>
-              <IonLabel>Social Media</IonLabel>
-            </IonListHeader>
-            <IonItem>
-              <IonLabel>
-                <IonText>
-                  <p>9pm - 9am</p>
-                </IonText>
-                <IonText color="medium">
-                  <h5>{`${day} ${month} ${date}`}</h5>
-                </IonText>
-              </IonLabel>
-              <IonRadio slot="start" value="time" color="success" />
-            </IonItem>
-            <IonItem>
-              <IonLabel>
-                <IonText>
-                  <p>Specific purpose</p>
-                </IonText>
-                <IonText color="medium">
-                  <h5>{`${day} ${month} ${date}`}</h5>
-                </IonText>
-              </IonLabel>
-              <IonRadio slot="start" value="time" color="success" />
-            </IonItem>
-          </IonRadioGroup>
+          <IonItem>
+            <IonLabel><h1>Stop</h1><p>- stop moving or operating</p></IonLabel>
+            <IonCheckbox slot="start" />
+          </IonItem>
+          <IonItem>
+            <IonLabel><h1>Notice</h1><p>- observe or pay attention to something</p></IonLabel>
+            <IonCheckbox slot="start" />
+          </IonItem>
+          <IonItem>
+            <IonLabel><h1>Beware</h1><p>- Be cautious and alert to the dangers of</p></IonLabel>
+            <IonCheckbox slot="start" />
+          </IonItem>
         </IonList>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default Stop;
