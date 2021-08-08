@@ -1,22 +1,28 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab3.css';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonListHeader } from '@ionic/react';
+import TitleHeader from '../components/Title';
+import ListItem from '../components/ListItem';
+import CountDown from '../components/CountDown';
 
 const Tab3: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
+          <IonTitle>Process Urges</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
+            <TitleHeader titleText="BREATHE" />
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        <IonList>
+          <ListItem actionWord="BREATHE" actionDetail="Inhale and Exhale, 3-5 min deep breaths" actionDetail2="Ex. Breathe into tightness of chest" />
+          <IonListHeader>
+            <CountDown minutes={5} seconds={0} />
+          </IonListHeader>
+        </IonList>
       </IonContent>
     </IonPage>
   );

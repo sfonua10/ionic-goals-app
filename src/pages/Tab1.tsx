@@ -1,22 +1,16 @@
-import { useState } from 'react'
-import styled from 'styled-components'
-import { IonContent, IonHeader, IonLabel, IonList, IonItem, IonInput, IonToggle, IonPage, IonRadio, IonCheckbox, IonTitle, IonToolbar, IonItemSliding, IonItemOptions, IonItemOption } from '@ionic/react';
-// import ExploreContainer from '../components/ExploreContainer';
-import './Tab1.css';
-
+import { IonContent, IonHeader, IonLabel, IonList, IonItem, IonPage, IonCheckbox, IonTitle, IonToolbar } from '@ionic/react';
+import TitleHeader from '../components/Title';
+import CountDown from '../components/CountDown';
 
 const Stop: React.FC = () => {
-  const IonStyledTitle = styled(IonTitle)`
-    text-align: center;
-  `;
-  
-  const [message, setMessage] = useState('')
-  const daysOfWeek = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
-  const monthsOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-  const today = new Date();
-  const day = daysOfWeek[today.getDay()]
-  const month = monthsOfYear[today.getMonth()]
-  const date = today.getDate();
+  //TODO: Track how many successful urges have occurred with month, day, year, counter
+  // const [message, setMessage] = useState('')
+  // const daysOfWeek = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
+  // const monthsOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  // const today = new Date();
+  // const day = daysOfWeek[today.getDay()]
+  // const month = monthsOfYear[today.getMonth()]
+  // const date = today.getDate();
 
   const handleClick = (e: any) => {
     console.log(e, 'sup playah!')
@@ -31,7 +25,7 @@ const Stop: React.FC = () => {
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonStyledTitle size="large">STOP</IonStyledTitle>
+            <TitleHeader titleText="STOP" />
           </IonToolbar>
         </IonHeader>
         <IonList>
@@ -39,9 +33,9 @@ const Stop: React.FC = () => {
             <IonLabel>
               <h1>Stop</h1>
               <p>- stop moving or operating</p>
-              <p>- do the above for 2 minutes</p>
+              <p>- do the above for <CountDown minutes={2} seconds={0} /> seconds</p>
             </IonLabel>
-            <IonCheckbox slot="start" onClick={handleClick}/>
+            <IonCheckbox slot="start" onClick={handleClick} />
           </IonItem>
           <IonItem>
             <IonLabel>
